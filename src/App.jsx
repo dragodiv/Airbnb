@@ -1,17 +1,15 @@
-import './App.css'
-import Navbar from './Navbar'
-import Hero from './Hero'
-import Cards from './Cards'
-import Card from './Card'
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import SendEmail from "./sendEmail";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Hero />
-      <Cards />
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/api/mail" element={<SendEmail />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
