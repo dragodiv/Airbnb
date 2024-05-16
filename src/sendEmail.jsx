@@ -21,11 +21,11 @@ export default function SendEmail() {
 
     function sendEmail() {
       Email.send({
-        SecureToken: "51467327-3a0f-43f9-8e3c-30241a311e1b",
-        To: "contact@divanshusoni.in",
-        From: "ad.creations.on@gmail.com",
+        SecureToken: import.meta.env.VITE_SecureToken,
+        To: import.meta.env.VITE_ToEmail,
+        From: import.meta.env.VITE_FromEmail,
         FromName: "Divanshu Soni",
-        ReplyAddress: "contact@divanshusoni.in",
+        ReplyAddress: import.meta.env.VITE_ToEmail,
         Subject: "New Message from Portfolio Website at " + formattedDate,
         Body: "This is a test email from my portfolio website." + formattedTime,
       }).then(message);
